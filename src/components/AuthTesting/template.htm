@@ -1,0 +1,35 @@
+<div>
+  <div class="auth">
+    <div class="title">Газпромбанк</div>
+    <div class="line"></div>
+    <div class="welcome-text">
+      <div class="col-12">
+        <p class="disclaimer">
+            Чтобы приступить к тестированию, введите пароль, который был в письме вместе с этой
+            ссылкой:
+        </p>
+      </div>
+    </div>
+    <form v-on:submit.prevent="Auth">
+      <div class="password">
+        <input
+          id="password"
+          name="password"
+          type="password"
+          class="input"
+          v-model="password"
+          autocomplete="off"
+        />
+        <label
+          for="password"
+          :class="(password && password !='') ? 'active' : '' "
+          >Пароль</label
+        >
+      </div>
+
+      <button class="button" type="submit">
+        Войти в систему
+      </button>
+    </form>
+  </div>
+</div>

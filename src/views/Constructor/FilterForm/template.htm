@@ -1,0 +1,15 @@
+<div style="padding: 10px;">
+  <DxForm ref="formFilter"
+    :style="{padding: '5px'}"
+    :form-data="filterModelData"
+    :read-only="false"
+    :show-colon-after-label="true"
+    :items="propertyFilterItems"
+  >
+    <template #calendar="{ data: cell,sqlData }">
+              <span :class="getCellCssClass(cell.date, cell,sqlData)">
+                {{ cell.text }}
+              </span>
+    </template>
+  </DxForm>
+</div>

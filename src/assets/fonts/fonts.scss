@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,600,700,800,900&display=swap&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('./refs/proxima-nova-regular.ttf');
+  src: url('./refs/proxima-nova-regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('./refs/proxima-nova-semibold.ttf');
+  src: url('./refs/proxima-nova-semibold.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('./refs/proxima-nova-bold.ttf');
+  src: url('./refs/proxima-nova-bold.ttf') format('truetype');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('./refs/proxima-nova-extrabold.ttf');
+  src: url('./refs/proxima-nova-extrabold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('./refs/proxima-nova-black.ttf');
+  src: url('./refs/proxima-nova-black.ttf') format('truetype');
+  font-weight: 800;
+}

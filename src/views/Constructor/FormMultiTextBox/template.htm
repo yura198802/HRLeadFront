@@ -1,0 +1,14 @@
+<div style="padding: 10px;" v-if="value">
+
+  <div class="styleFormStopka" v-if="valueReady">
+    {{value}}
+    <div class="textAreaDiv" v-for="(item, index) in value" v-bind:key="`${item.id}`">
+      <DxTextArea :height="50" :ref="'Area'+ (index)" :id="index" valueChangeEvent="change"
+                  class="textareaTrash" @valueChanged="getPhonesOptions" v-bind:value="item.value"/>
+      <DxButton icon="trash" :ref="'Button'+ (index)" class="buttonAreaTrash" v-on:click="trash(item)"/>
+    </div>
+  </div>
+  <DxButton text="Добавить элемент" icon="add" v-on:click="click"
+            class="add-phone-button"
+  />
+</div>

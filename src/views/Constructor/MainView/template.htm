@@ -1,0 +1,42 @@
+<div class="blog-container">
+
+  <div class="blog-heading">
+    <a href="https://www.gpbspace.ru/blog/">
+      Блог
+    </a>
+  </div>
+
+  <div class="blog-item width-size" v-for="item in news">
+    <div class="blog-item__pic w-100">
+      <a :href="item.blogLink">
+        <img
+          :src="item.imageLink"
+          class="blog-item__img"
+        />
+      </a>
+    </div>
+    <div class="blog-item__tag-box">
+      <a
+        :href="item.tagLink"
+        class="blog-item__tag d-inline-block"
+      >
+        {{ item.tag }}
+      </a>
+    </div>
+    <p class="blog-item__date">
+      {{ item.date }}
+    </p>
+    <p class="blog-item__header">
+      {{ item.title }}
+    </p>
+    <p class="blog-item__text">
+      {{ item.description }}
+    </p>
+    <a :href="item.blogLink" class="blog-item__link">
+      Читать
+      <i class="blog-item__arrow">
+        <img src="https://www.gpbspace.ru/assets/images/long-arrow-right.svg" />
+      </i>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,304 @@
+@import "@/styles/root.scss";
+
+.dashboard {
+  // &__title {
+  //   font-size: 24px;
+  //   text-align: center;
+  //   font-weight: 800;
+  //   margin-left: 24px;
+  //   color: $accidentColor;
+  // }
+
+  &__header {
+    padding: 0 10px;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.16);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .dx-button {
+      border-radius: 5px;
+    }
+
+    .icon-container {
+      background-color: #fff;
+      box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.09);
+      padding: 4px;
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+      border-radius: 5px;
+      transition: 0.2s ease-in;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $accidentColor;
+
+        i {
+          color: #fff;
+        }
+      }
+
+      i {
+        transition: 0.2s ease-in;
+        font-size: 26px;
+      }
+    }
+
+    .logo {
+      margin-left: 20px;
+    }
+  }
+
+  &__content {
+    margin: 10px 10px 0;
+  }
+}
+
+#container {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+}
+
+// Правки по теме DevExpress
+
+.dx-button-has-icon .dx-icon {
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+}
+
+.dx-template-wrapper.dx-item-content.dx-tab-content {
+  justify-content: space-between;
+}
+
+.dx-toolbar-items-container .dx-icon {
+  font-size: 16px !important;
+}
+
+.dx-datagrid-header-panel .dx-toolbar {
+  margin-bottom: 0;
+}
+
+.dx-toolbar-items-container {
+  height: 44px !important;
+
+  .dx-icon {
+    font-size: 20px;
+  }
+}
+
+.dx-datagrid {
+  .dx-datagrid-headers .dx-datagrid-table .dx-row > td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .dx-row > td {
+    font-size: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.dx-datagrid-pager.dx-pager {
+  padding: 6px 14px 6px 13px;
+
+  .dx-info {
+    font-size: 11px;
+  }
+
+  .dx-page {
+    padding: 6px 9px;
+    margin: 0 1px;
+  }
+}
+
+.dx-tab {
+  padding: 8px 10px !important;
+
+  .dx-tab-content {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: none;
+
+    .image-tab {
+      margin-right: 6px;
+    }
+
+    & .dx-icon-close {
+      opacity: 0.6;
+      font-size: 15px;
+      margin-right: 0;
+      margin-left: 3px;
+      transition: 0.2s ease-in;
+
+      &:hover {
+        opacity: 0.3;
+      }
+    }
+  }
+}
+
+.dx-tabpanel .dx-tabs {
+  background-color: #fff;
+}
+
+.dx-treeview-item {
+  padding: 6px 8px;
+  line-height: 22px;
+  font-size: 12px;
+  min-height: auto;
+  line-height: 15px;
+}
+
+.dx-treeview-toggle-item-visibility {
+  height: 30px;
+}
+
+.dx-overlay-content.dx-popup-normal.dx-resizable {
+  overflow: auto !important;
+}
+
+.dashboard > .dx-drawer > .dx-drawer-wrapper > .dx-drawer-panel-content {
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.16);
+}
+
+#treeview {
+  padding: 14px 10px 14px 14px;
+
+  & > .dx-treeview-search {
+    margin-bottom: 16px;
+  }
+
+  .dx-scrollbar-vertical {
+    right: -10px;
+  }
+
+  li[aria-level="1"] {
+    & > .dx-item.dx-treeview-item span {
+      font-weight: 600;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      right: 4px;
+      height: 20px;
+      width: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+    }
+
+    &[aria-label="Главная страница"] {
+      &.dx-state-focused::before {
+        background-image: url("../../assets/tab-icons/home-tab_white.svg") !important;
+      }
+      &::before {
+        background-image: url("../../assets/tab-icons/home-tab.svg");
+      }
+    }
+
+    &[aria-label="Вакансии"] {
+      &.dx-state-focused::before {
+        background-image: url("../../assets/tab-icons/user-list_white.svg") !important;
+      }
+      &::before {
+        background-image: url("../../assets/tab-icons/user-list.svg");
+      }
+    }
+
+    &[aria-label="Справочники"] {
+      &.dx-state-focused::before {
+        background-image: url("../../assets/tab-icons/books-tab_white.svg") !important;
+      }
+      &::before {
+        background-image: url("../../assets/tab-icons/books-tab.svg");
+      }
+    }
+
+    &[aria-label="Импорт"] {
+      &.dx-state-focused::before {
+        background-image: url("../../assets/tab-icons/import-tab_white.svg") !important;
+      }
+      &::before {
+        background-image: url("../../assets/tab-icons/import-tab.svg");
+      }
+    }
+
+    &[aria-label="Настройки"] {
+      &.dx-state-focused::before {
+        background-image: url("../../assets/tab-icons/settings-tab_white.svg") !important;
+      }
+      &::before {
+        background-image: url("../../assets/tab-icons/settings-tab.svg");
+      }
+    }
+
+    &[aria-label="Документы"] {
+      &.dx-state-focused::before {
+        background-image: url("../../assets/tab-icons/documents-tab_white.svg") !important;
+      }
+      &::before {
+        background-image: url("../../assets/tab-icons/documents-tab.svg");
+      }
+    }
+
+    &[aria-label="Исходящие"] {
+      &.dx-state-focused::before {
+        background-image: url("../../assets/tab-icons/outbox-tab_white.svg") !important;
+      }
+      &::before {
+        background-image: url("../../assets/tab-icons/outbox-tab.svg");
+      }
+    }
+
+    &[aria-label="Отчёты"] {
+      &.dx-state-focused::before {
+        background-image: url("../../assets/tab-icons/reports-tab_white.svg") !important;
+      }
+      &::before {
+        background-image: url("../../assets/tab-icons/reports-tab.svg");
+      }
+    }
+    .dx-item-content.dx-treeview-item-content {
+      padding-right: 10px;
+    }
+  }
+}
+
+.dx-placeholder {
+  font-size: 14px;
+}
+
+.dx-searchbox.dx-editor-underlined .dx-placeholder::before,
+.dx-searchbox.dx-editor-underlined .dx-texteditor-input {
+  padding-left: 28px;
+}
+
+.dx-tabs-scrollable .dx-tab:before {
+  display: inline;
+}
+
+// в форме редактирования
+.dx-field-item-content:not(.dx-field-item-has-group):not(.dx-field-item-has-tabs) {
+  padding-top: 0px;
+}
+
+.dx-field-item-label-location-top {
+  padding: 6px 0 3px;
+}
+
+.dx-datagrid-headers .dx-datagrid-table .dx-row > td {
+  color: #2e2e38;
+}

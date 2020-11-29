@@ -1,0 +1,16 @@
+<div class="diag">
+<!--  <DxToolbar id="tbar"  >
+    <DxItem :options="options" :visible = "true" location="before" widget="dxButton"  />
+  </DxToolbar>-->
+  <div >
+    <DxPieChart id="pie" :data-source="purchases" palette="Bright" title="Общая сумма проданных продуктов">
+      <DxSeries argument-field="arg" value-field="val">
+        <DxLabel :visible="true">
+          <DxConnector :visible="true" :width="1" />
+        </DxLabel>
+      </DxSeries>
+      <DxSize :width="900" />
+      <DxExport :enabled="false" />
+    </DxPieChart>
+  </div>
+</div>

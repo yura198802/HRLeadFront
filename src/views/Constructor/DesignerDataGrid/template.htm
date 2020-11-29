@@ -1,0 +1,60 @@
+<div style="height: 100%">
+  <div style="height: 100%">
+        <DxDataGrid :style="{padding: '3px',width:'100%', height: '100%'}"
+                    :data-source="models"
+                    height='100%'
+                    id="gridContainer"
+                    :remote-operations="false"
+                    :allow-column-reordering="true"
+                    :row-alternation-enabled="true"
+                    :allow-column-resizing="true"
+                    :focused-row-enabled="true"
+                    :focused-row-key.sync="focusedRowKey"
+                    :show-borders="true"
+                    :keyExpr="keyModel"
+                    :columns="columns"
+                    ref="dataGrid"
+                    @exporting="onExporting"
+                    @focused-row-changed="onFocusedRowChanged"
+                    v-on:rowDblClick="onRowDblClick"
+        >
+          <DxHeaderFilter
+            :visible="true" :allowSearch="true"
+          />
+          <DxSearchPanel
+            :visible="true"
+            :width="240"
+            placeholder="Поиск..."
+          />
+          <DxExport
+            :enabled="true"
+          />
+          <DxSummary>
+            <DxTotalItem
+              :column="keyModel"
+              summary-type="count"
+            />
+          </DxSummary>
+          <DxPaging :page-size="25" :enabled="true"/>
+          <DxPager
+            :show-page-size-selector="true"
+            :allowed-page-sizes="pageSizes"
+            :show-info="true"
+            :visible="true"
+          />
+          <DxSelection
+            show-check-boxes-mode="always"
+            :mode="selectionMode"
+          />
+        </DxDataGrid>
+  </div>
+
+  <DxLoadPanel
+    :visible.sync="loadingVisible"
+    :show-indicator="true"
+    :show-pane="true"
+    :shading="false"
+    :close-on-outside-click="false"
+    shading-color="rgba(0,0,0,0.4)"
+  />
+</div>

@@ -1,0 +1,112 @@
+@import url('https://i.hh.ru/css/other/pages/__fonts_eeb0aa902517f8a6d40b35abc0cdd806.css');
+@import url('https://i.hh.ru/css/globals/pages/__account_25c9d8968c92e5062c72d4af6e31d1bd.css');
+@import url('https://i.hh.ru/css/globals/pages/__bloko-imports_13d30bf41d504aa139600544636035d9.css');
+@import url('https://i.hh.ru/css/globals/pages/__dev-tools_2387bdf250166181cce181d293ef8af9.css');
+.users{
+    position:relative;
+    padding: 20px;
+    display:flex;
+}
+.cards{
+    display:flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+.step{
+    &-box{
+        width: 100%;
+        margin-bottom: 20px;
+        padding-right: 20px;
+    }
+    &-body{
+        margin-top:10px;
+    }
+    &-header{
+        font-size:16px;
+    }
+    &-input{
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+         display:block;
+         
+    }
+}
+.card{
+    flex: 0 0 calc(100% / 3 - 20px);
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0px 2px 5px rgba(219, 219, 219, 0.5);
+    margin-right: 30px;
+    display:flex;
+    line-height: 1.19;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    color:#000;
+    text-decoration: none;
+   
+    &-avatar{
+        border-radius: 50px;
+        min-width: 100px;
+        height: 100px;
+        overflow: hidden;
+        background-size: cover;
+        background-color: #ccc;
+        margin-right: 20px;
+    }
+    &-name{
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 15px;
+
+    }
+    &-tasks{
+        display:flex;
+        align-items: center;
+        margin-top: 15px;
+    }
+    &:nth-child(3n){
+        margin-right: 0
+    }
+    &-icon{
+        filter: grayscale(1) brightness(2.7);
+        width: 18px;
+        height: 20px;
+        margin-right: 5px;
+
+    }
+}
+.tempside{
+    background: #fff;
+    width: 300px;
+    z-index: 9;
+    height: calc(100vh - 80px);
+}
+#pagePrev{
+    width: 100%;
+    height: calc(100vh - 120px);
+    overflow: auto;
+    input, a, button, textarea{
+        position: relative;
+       
+        &:hover, &:focus {
+            
+            &:after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display:block;
+                content: '';
+                width: 100%;
+                height: 100%;
+                background: #0057b6!important
+            }
+        }
+    }
+    input[type="text"], input[type="submit"], input[type="reset"]{
+        &:hover, &:focus {
+        background: #0057b6!important;
+    }
+    }
+} 

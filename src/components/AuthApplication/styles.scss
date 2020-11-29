@@ -1,0 +1,166 @@
+
+@import "@/styles/root.scss";
+
+.auth {
+  width: 440px;
+  box-sizing: border-box;
+  background-color:#fff;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 1px;
+  align-self: center;
+  padding: 32px 32px 52px;
+  margin-bottom: 46px;
+  color: #262c40;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  form {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 32px;
+    height: 28px;
+    text-align: center;
+    line-height: 28px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    font-family: "Proxima Nova", "Fira Sans",Roboto,Arial,sans-serif;
+  }
+
+  .description {
+    text-align: center;
+    font-family: "Proxima Nova", "Fira Sans",Roboto,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 140%;
+    opacity: 0.7;
+    padding-bottom: 20px;
+  }
+
+  .line {
+    height: 1px;
+    width: 100px;
+    background: $accidentColor;
+  }
+
+  .input {
+    background: transparent;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #262c4087;
+    color: #262c40;
+    font-family: "Proxima Nova", "Fira Sans",Roboto,Arial,sans-serif;
+    font-size: 18px;
+    line-height: 100%;
+    padding: 12px 8px 6px;
+    outline: none;
+  }
+
+  .login, .password {
+    margin-top: 32px;
+    position: relative;
+
+    label {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      color: #262c40;
+      opacity: 0.7;
+      font-family: "Proxima Nova", "Fira Sans",Roboto,Arial,sans-serif;
+      font-size: 18px;
+      line-height: 100%;
+      padding: 16px 8px;
+      transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+
+      &.active {
+        opacity: 0.5;
+        padding: 0;
+        font-size: 12px;
+        line-height: 12px;
+        top: -6px;
+      }
+
+    }
+
+  }
+
+  .checkbox {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 4px;
+    margin-top: 32px;
+
+    &-input {
+      display: flex;
+      justify-content: center;
+      padding: 2px;
+      align-items: center;
+      border: #555 solid 2px;
+      margin-right: 10px;
+      border-radius: 2px;
+      width: 16px;
+      height: 16px;
+      transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+      background: transparent;
+
+      &.checked {
+        border-color: $accidentColor;
+        background-image: url("../../assets/images/check.svg");
+        background-color: $accidentColor;
+        background-repeat: no-repeat;
+        background-size: 12px;
+        background-position: center;
+      }
+
+    }
+
+    &-label {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      opacity: 0.6;
+      color: #262c40;
+    }
+
+    input {
+      display: none
+    }
+  }
+
+  .button {
+    width: 100%;
+    max-width: 280px;
+    height: 56px;
+    font-size: 16px;
+    background-color: $accidentColor;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border-radius: 2px;
+    transition: .2s ease-in;
+    margin-top: 36px;
+    border: 0;
+    outline: 0;
+    font-family: "Proxima Nova", "Fira Sans",Roboto,Arial,sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+      outline: 0;
+    }
+
+    &:active {
+      box-shadow: none;
+      outline: 0;
+    }
+  }
+}
+

@@ -1,0 +1,212 @@
+.testing {
+  &__title {
+    font-size: 24px;
+    text-align: center;
+    font-weight: 600;
+    margin-left: 40px 
+  }
+
+  &__header {
+    padding: 0 10px;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.16);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    &-container {
+      display: flex;
+      align-items: center;
+    }
+
+    
+
+    .logo {
+      margin-left: 20px;
+    }
+  }
+  .questions{
+    padding: 80px;
+    width: 80%;
+    .tags{
+      display:flex;
+      
+      .tag{
+        padding: 3px 6px;
+        background: #6666dc;
+        color: #fff;
+        margin-right: 10px;
+        font-size: 12px
+      }
+    }
+    .title{
+      font-size: 36px;
+      font-weight: 300;
+      margin-top: 20px;
+      
+      /deep/ pre{
+        font-size: 16px;
+        padding: 20px;
+        background: #eee
+      }
+    }
+    .description{
+      margin: 20px 0;
+      pre{
+        font-size: 16px;
+        padding: 20px;
+        background: #eee
+      }
+    }
+    .answers{
+      .answer{
+        &.picker{
+          margin: 20px 0;
+          font-size: 18px;
+          display:flex;
+          align-items: center;
+          input{
+            height: 18px; 
+            width:18px;
+            margin-right: 10px
+          }
+        }
+        &.input{
+          display: block;
+          font-size: 18px;
+          padding: 5px 10px;
+          border: 0;
+          border-bottom: 1px solid  #6666dc;
+          outline: 0;
+          margin: 20px 0;
+          width: 100%
+        }
+        &.textarea{
+          display: block;
+          font-size: 18px;
+          padding: 5px 10px;
+          border: 0;
+          border-bottom: 1px solid  #6666dc;
+          outline: 0;
+          margin: 20px 0;
+          width: 100%;
+          height: 120px;
+          resize: vertical;
+        }
+        &.checkboxes{
+          margin: 20px 0;
+          font-size: 18px;
+          display:flex;
+          align-items: center;
+          input{
+            height: 18px; 
+            width:18px;
+            margin-right: 10px
+          }
+        }
+      }
+    }
+  }
+}
+
+.authpage {
+  display:flex;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .logo-container {
+    background-color: #fff;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    width: 440px;
+    justify-content: space-around;
+    margin-bottom: 32px;
+  }
+}
+
+.auth {
+  width: 440px;
+  box-sizing: border-box;
+  background-color:#fff;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 1px;
+  align-self: center;
+  padding: 32px 32px 52px;
+  margin-bottom: 46px;
+  color: #262c40;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  .title {
+    font-size: 32px;
+    height: 28px;
+    text-align: center;
+    line-height: 28px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    font-family: "Fira Sans","Fira Code",Roboto,Arial,sans-serif;
+  }
+
+  .description {
+    text-align: center;
+    font-family: "Fira Sans","Fira Code",Roboto,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 140%;
+    opacity: 0.7;
+    padding-bottom: 20px;
+  }
+
+  .line {
+    height: 1px;
+    width: 100px;
+    background: #fe7109;
+  }
+
+  .input {
+    background: transparent;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #262c4087;
+    color: #262c40;
+    font-family: "Fira Sans","Fira Code",Roboto,Arial,sans-serif;
+    font-size: 18px;
+    line-height: 100%;
+    padding: 12px 8px 6px;
+    outline: none;
+  }
+}
+
+.controls{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 20px 40px;
+  display:flex;
+  justify-content: space-between;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.16);
+  align-items: center;
+  .button{
+    background: #6666dc;
+    color: #fff;
+    padding: 10px 20px;
+    display:inline-block;
+    cursor:pointer;
+    &.white{
+      background: transparent;
+      color: #6666dc;
+    }
+    &.disabled{
+      cursor:default;
+      background: #ddd
+    }
+    
+  }
+}

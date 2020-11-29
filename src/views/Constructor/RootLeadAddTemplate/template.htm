@@ -1,0 +1,38 @@
+
+<div class="users">
+	<div class="tempside">
+		<div class="step1 step-box">
+			<div class="step-header"><b>Шаг1</b> Введите название шаблона и адрес сайта</div>
+			<form class="step-body">
+				<input class="step-input" v-model="name" placeholder="Название шаблона">
+				<input class="step-input" v-model="siteurl" placeholder="Адрес сайта">
+				<div class="step-btn" v-on:click="openUrl()">Открыть сайт</div>
+			</form>
+		</div>
+		<div class="step2 step-box" v-if="step>1">
+				<div class="step-header"><b>Шаг2</b> Выберите элемент</div>
+				<form class="step-body">
+					<input class="step-input" v-model="step2" placeholder="Элемент">
+					<input v-if="step2 !== ''" class="step-input" v-model="text2" placeholder="Текст">
+				</form>
+			</div>
+			<div class="step3 step-box" v-if="step>2">
+					<div class="step-header"><b>Шаг3</b> Выберите элемент</div>
+					<form class="step-body">
+						<input class="step-input" v-model="step3" placeholder="Элемент">
+						<input v-if="step3 !== ''" class="step-input" v-model="text3" placeholder="Текст">
+					</form>
+				</div>
+				<div class="step4 step-box" v-if="step>3">
+          <div class="step-header"><b>Шаг3</b>  Выберите элемент</div>
+          <form class="step-body">
+            <input class="step-input" v-model="step4" placeholder="Элемент">
+          </form>
+        </div>
+		<div v-if="step>3" v-on:click="saveTemplate()" style="width:calc(100% - 20px); line-height: 40px; background: #0057b6; color: #fff; text-align: center;">Сохранить</div>
+	</div>
+	<div class="container"  id="pagePrev">
+		<div ><div v-html="page"/></div>
+	</div>
+	
+</div>

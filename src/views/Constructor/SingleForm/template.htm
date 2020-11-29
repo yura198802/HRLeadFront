@@ -1,0 +1,16 @@
+<div style="padding: 10px;">
+  <div class="popup-property-details">
+
+    <DxToolbar :items="toolbarContent"/>
+    <DxForm
+      ref="formEditro"
+      :form-data="editModel"
+      :read-only="false"
+      :items="propertyItems"
+      :show-validation-summary="true"
+      validation-group="DesignerModelEditor"
+      :show-colon-after-label="true"
+      :scrollingEnabled="true"
+    />
+  </div>
+</div>

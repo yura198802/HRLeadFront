@@ -1,0 +1,105 @@
+{
+    "items": [
+        {
+            "key": "$base-accent",
+            "value": "#0057B6"
+        },
+        {
+            "key": "$base-text-color",
+            "value": "#262C40"
+        },
+        {
+            "key": "$base-bg",
+            "value": "#FFFFFF"
+        },
+        {
+            "key": "$base-danger",
+            "value": "rgb(200, 79, 79)"
+        },
+        {
+            "key": "$base-success",
+            "value": "rgb(101, 204, 123)"
+        },
+        {
+            "key": "$base-warning",
+            "value": "rgba(0, 87, 182, 1)"
+        },
+        {
+            "key": "$pager-page-selected-bg",
+            "value": "rgba(215, 222, 233, 1)"
+        },
+        {
+            "key": "$base-border-color",
+            "value": "rgba(230, 234, 240, 1)"
+        },
+        {
+            "key": "$base-font-family",
+            "value": "\"Proxima Nova\", \"Fira Sans\", Roboto, Arial, sans-serif"
+        },
+        {
+            "key": "$base-icon-color",
+            "value": "rgba(124, 135, 147, 1)"
+        },
+        {
+            "key": "$base-border-radius",
+            "value": "2px"
+        },
+        {
+            "key": "$base-border-radius-small",
+            "value": "2px"
+        },
+        {
+            "key": "$base-border-radius-large",
+            "value": "2px"
+        },
+        {
+            "key": "$drawer-shader-background-color",
+            "value": "rgba(124, 135, 147, 0.5)"
+        },
+        {
+            "key": "$navbar-tab-selected-color",
+            "value": "rgba(255, 255, 255, 1)"
+        },
+        {
+            "key": "$tabs-tab-selected-color",
+            "value": "rgba(255, 255, 255, 1)"
+        },
+        {
+            "key": "$treeview-hover-bg",
+            "value": "rgba(0, 87, 182, 0.1)"
+        },
+        {
+            "key": "$treeview-item-selected-color",
+            "value": "rgba(38, 44, 64, 1)"
+        },
+        {
+            "key": "$base-focus-color",
+            "value": "rgba(255, 255, 255, 1)"
+        },
+        {
+            "key": "$tabs-tab-hover-bg",
+            "value": "rgba(0, 87, 182, 0.15)"
+        },
+        {
+            "key": "$tabs-focused-border-color",
+            "value": "rgba(0, 87, 182, 1)"
+        },
+        {
+            "key": "$tabs-tab-selected-bg",
+            "value": "rgba(0, 87, 182, 1)"
+        },
+        {
+            "key": "$navbar-tab-selected-bg",
+            "value": "rgba(0, 87, 182, 1)"
+        },
+        {
+            "key": "$treeview-focused-bg",
+            "value": "rgba(0, 87, 182, 0.6)"
+        }
+    ],
+    "baseTheme": "generic.light",
+    "outputColorScheme": "gpb-theme",
+    "makeSwatch": false,
+    "version": "20.2.3-build-20307-0001",
+    "widgets": []
+}

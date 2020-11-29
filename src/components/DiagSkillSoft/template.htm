@@ -1,0 +1,22 @@
+<div class="diag">
+  <DxChart
+    id="chart"
+    :data-source="purchases"
+    :rotated="true"
+    title="Рейтинг резюме"
+  >
+    <DxCommonSeriesSettings
+      :ignore-empty-points="true"
+      argument-field="arg"
+      value-field="val"
+      type="bar"
+    />
+    <DxSize :height="200"/>
+    <DxSeriesTemplate name-field="arg"/>
+    <DxArgumentAxis :tick-interval="10">
+      <DxLabel :customize-text="customizeLabelText"/>
+    </DxArgumentAxis>
+    <DxSeries type="bar"/>
+    <DxLegend :visible="false"/>
+  </DxChart>
+</div>

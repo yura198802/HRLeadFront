@@ -1,0 +1,41 @@
+{
+    "items": [
+        {
+            "key": "$base-accent",
+            "value": "rgba(254, 113, 9, 1)"
+        },
+        {
+            "key": "$base-text-color",
+            "value": "rgba(46, 46, 56, 1)"
+        },
+        {
+            "key": "$base-font-family",
+            "value": "'Fira Sans','Fira Code',Roboto,Arial,sans-serif;"
+        },
+        {
+            "key": "$navbar-tab-selected-bg",
+            "value": "rgba(254, 113, 9, 0.4)"
+        },
+        {
+            "key": "$tabs-tab-selected-bg",
+            "value": "rgba(254, 113, 9, 0.5)"
+        },
+        {
+            "key": "$tabs-tab-hover-bg",
+            "value": "rgba(254, 113, 9, 0.15)"
+        },
+        {
+            "key": "$base-success",
+            "value": "rgba(58, 176, 58, 1)"
+        },
+        {
+            "key": "$base-danger",
+            "value": "rgba(240, 50, 36, 1)"
+        }
+    ],
+    "baseTheme": "generic.light",
+    "outputColorScheme": "custom-scheme",
+    "makeSwatch": false,
+    "version": "20.2.3-build-20307-0001",
+    "widgets": []
+}

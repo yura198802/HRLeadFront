@@ -1,0 +1,131 @@
+<div class="dashboard">
+  <header class="dashboard__header">
+    <div class="dashboard__header-container">
+      <DxButton
+        ...
+        text=""
+        hint="Скрыть/Показать меню"
+        type="normal"
+        icon="menu"
+        styling-mode="outlined"
+        @click="menuClick"
+      />
+      <img
+      src="../../assets/images/hr-lead-brain-logo.svg"
+      height="28"
+      alt="Monica Logo"
+      class="logo"
+    />
+      <img
+        src="../../assets/images/icon-gpb-blue.svg"
+        height="32"
+        alt="Monica Logo"
+        class="logo"
+      />
+    </div>
+
+    <div class="dashboard__header-container">
+      <div class="icon-container">
+        <i class="dx-icon-user"></i>
+      </div>
+      <div class="icon-container">
+        <i class="dx-icon-preferences" @click="preferencesClick"></i>
+      </div>
+    </div>
+  </header>
+  <DxDrawer
+    :opened-state-mode="selectedOpenMode"
+    :opened.sync="openState"
+    :close-on-outside-click="true"
+    template="listMenu"
+    :closeOnOutsideClick="false"
+  >
+    <template #listMenu>
+      <DxTabPanel
+        id="tree"
+        class="dx-theme-background-color"
+        :selectedItem="selectedTabPanel"
+        :style="{height: (viewHeight - 65) + 'px'}"
+        :show-nav-buttons="false"
+        :repaint-changes-only="true"
+        :animation-enabled="true"
+        item-title-template="title"
+        :defer-rendering="false"
+      >
+        <DxItem title="Меню" class="item">
+          <template #default>
+            <div class="tree" :style="{height: (viewHeight - 50) + 'px'}">
+              <DxTreeView
+                id="treeview"
+                :items="menus"
+                key-expr="id"
+                heightTree
+                data-structure="plain"
+                parent-id-expr="parentId"
+                :search-enabled="true"
+                :search-mode="searchMode"
+                @item-click="selectItemMenu"
+              />
+            </div>
+          </template>
+        </DxItem>
+        <DxItem title="Отчётные формы" class="item">
+          <template #default>
+            <div class="tree" :style="{height: (viewHeight - 50) + 'px'}">
+              <DxTreeView
+                id="reportstree"
+                :items="reports"
+                key-expr="id"
+                heightTree
+                data-structure="plain"
+                parent-id-expr="parentId"
+                :search-enabled="false"
+                @item-click="selectItemReports"
+              >
+              <template #item="{data}">
+                <span >
+                {{ data.text }}++
+                </span>
+                </template>
+              </DxTreeView>
+            </div>
+            </template>
+        </DxItem>
+      </DxTabPanel>
+    </template>
+
+    <div class="dashboard__content">
+      <DxSortable filter=".dx-tab" item-orientation="horizontal">
+        <div>
+          <DxTabPanel
+            id="content"
+            class="dx-theme-background-color"
+            :selectedItem="selectedTabPanel"
+            :data-source.sync="tabPages"
+            :style="{height: (viewHeight - 75) + 'px'}"
+            :show-nav-buttons="true"
+            :repaint-changes-only="true"
+            :animation-enabled="true"
+            item-title-template="title"
+            item-template="itemTemplate"
+            :defer-rendering="false"
+          >
+            <template #title="{ data: page }">
+              <div>
+                <i class="dx-icon dx-icon-info"></i>
+                <span>{{ page.text }}</span>
+                <i
+                  class="dx-icon dx-icon-close"
+                  @click="closeButtonHandler(page)"
+                />
+              </div>
+            </template>
+            <template #itemTemplate="{ data: page }">
+              <CoreView :template-data="page" />
+            </template>
+          </DxTabPanel>
+        </div>
+      </DxSortable>
+    </div>
+  </DxDrawer>
+</div>

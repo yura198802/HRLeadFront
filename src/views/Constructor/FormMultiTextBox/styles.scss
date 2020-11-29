@@ -1,0 +1,30 @@
+.styleFormStopka
+{
+  display: flex;
+  flex-flow: column wrap;
+
+}
+.textAreaStyle
+{
+  padding: 5px;
+}
+
+.add-phone-button {
+  margin-top: 10px;
+}
+
+.textAreaDiv{
+  display:inline-block;
+  position:relative;
+}
+
+.buttonAreaTrash{
+  position:absolute;
+  bottom:10px;
+  right:10px;
+}
+
+.textareaTrash{
+  display:block;
+  margin-top: 10px;
+}

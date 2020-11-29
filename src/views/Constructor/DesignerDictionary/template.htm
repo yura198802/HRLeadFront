@@ -1,0 +1,149 @@
+<div style="height: 100%">
+  <div style="height: 100%">
+    <DxDrawer
+      :opened-state-mode="selectedOpenMode"
+      :opened.sync="openState"
+      :close-on-outside-click="true"
+      template="listMenu"
+      :closeOnOutsideClick="false"
+    >
+      <template #listMenu>
+        <div style="width:300px;" class="default-theme">
+          <DxButton
+            style="margin: 10px 0px 0px 5px;"
+            ...
+            text=""
+            hint="Скрыть фильтр"
+            type="normal"
+            icon="filter"
+            styling-mode="outlined"
+            @click="filterClick"
+          />
+          <span class="designer-filter-heading">
+            Панель фильтров
+          </span>
+          <FilterForm ref="filterForm"  @click:editChangeFilter="refresh"/>
+        </div>
+      </template>
+
+      <splitpanes ref="splitpanels" class="default-theme" :horizontal="horizontal" >
+        <pane :min-size="minSizeLeftPanel" :max-size="maxSizePanelGrid">
+          <DxDataGrid
+            :style="{padding: '3px',width:'100%', height: '100%'}"
+            :data-source="models"
+            id="gridContainer"
+            :remote-operations="false"
+            :row-alternation-enabled="true"
+            :allow-column-resizing="true"
+            :show-row-lines="true"
+            :allow-column-reordering="true"
+            :focused-row-enabled="true"
+            :focused-row-key.sync="focusedRowKey"
+            :show-borders="true"
+            :wordWrapEnabled="true"
+            :keyExpr="keyModel"
+            :columns="columns"
+            ref="dataGrid"
+            :loadPanel="loadPanel"
+            @exporting="onExporting"
+            @focused-row-changed="onFocusedRowChanged"
+            @toolbar-preparing="onToolbarPreparing($event)"
+            v-on:rowDblClick="onRowDblClick"
+          >
+            <template #textInfoBtn="{ data }">
+              <div class="container">
+                <div class="box">
+                  <div class="toolBarLabelText">{{ data.displayName }}</div>
+                </div>
+                <div class="box">
+                  <div class="toolBarResultText">{{data.value}}</div>
+                </div>
+              </div>
+            </template>
+            <DxHeaderFilter :visible="true" :allowSearch="true" />
+            <DxSearchPanel
+              :visible="true"
+              :width="240"
+              placeholder="Поиск..."
+            />
+            <DxExport :enabled="true" />
+            <DxPaging :page-size="25" :enabled="false" />
+            <DxPager
+              :show-page-size-selector="true"
+              :allowed-page-sizes="pageSizes"
+              :show-info="true"
+              :visible.sync="isVisibleFooter"
+            />
+            <DxSelection show-check-boxes-mode="always" :mode="multipleMode" />
+            <DxScrolling
+              column-rendering-mode="virtual"
+              mode="virtual"
+              showScrollbar="always"
+            />
+          </DxDataGrid>
+        </pane>
+        <pane v-if="!hideDetailPane">
+          <DxTabPanel
+            id="content12"
+            :selectedItem="selectedTabPanel"
+            :data-source="tabPageDetails"
+            :show-nav-buttons="true"
+            item-title-template="title"
+            item-template="itemTemplate"
+            :defer-rendering="false"
+            height="100%"
+            @selectionChanged="onSelectionChanged"
+          >
+            <template #title="{ data: page }">
+              <div>
+                <span>{{ page.text }}</span>
+              </div>
+            </template>
+            <template #itemTemplate="{ data: page }">
+              <CoreView
+                style="height: 100%"
+                :ref="'coreView' + page.idModel"
+                :template-data="page"
+              />
+            </template>
+          </DxTabPanel>
+        </pane>
+      </splitpanes>
+    </DxDrawer>
+  </div>
+
+  <DxPopup
+    :width="widthDetail"
+    :height="heightDetail"
+    :show-title="true"
+    :title.sync="captionEditFormModel"
+    :visible.sync="isVisibleEditForm"
+    :toolbarItems="toolbarContentDetail"
+    :showCloseButton="false"
+    :drag-enabled="true"
+    :close-on-outside-click="false"
+    @shown="onInitialized"
+  >
+    <div class="popup-property-details">
+      <DxForm
+        ref="formEditro"
+        :form-data="editModel"
+        :read-only="false"
+        :items="propertyItems"
+        :show-validation-summary="true"
+        validation-group="DesignerModelEditor"
+        :show-colon-after-label="true"
+        :scrollingEnabled="true"
+      >
+        <template #multiarea>
+          <FormMultiArea ref="multiarea" ></FormMultiArea>
+        </template>
+      </DxForm>
+    </div>
+  </DxPopup>
+
+  <input ref="file" type="file"  v-on:change="handleFileUpload"  hidden>
+
+  <Dialog ref="dialogAction" @click:ok="actionOkByFormDialog"/>
+  <FilterDialog ref="dialogFilterAction" @click:ok="actionSysName"/>
+</div>

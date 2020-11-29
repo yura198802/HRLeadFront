@@ -1,0 +1,78 @@
+<div class="testing">
+  <header class="testing__header">
+    <div class="testing__header-container">
+      <img
+        src="../../assets/images/icon-gpb-blue.svg"
+        height="40"
+        alt="Monica Logo"
+        class="logo"
+      />
+    </div>
+    <div class="testing__title">
+      Газпромбанк «HR ассистент»
+    </div>
+  </header>
+  <div class="questions" v-if='status==="processing"'>
+    <div v-for="(item, index) in questions" :key="item.id" v-if="currentQuestion - 1 === index">
+      <div class="question">
+        <div class="tags"><div class="tag" v-for="(tag, index) in item.tags" :key="index">{{tag}}</div></div>
+
+        <div class="title" v-html="item.question"/>
+        <div class="description" v-if="item.description">
+          Входные данные:
+          <pre class="code" >{{item.description}}</pre>
+        </div>
+
+        <div class="answers" v-if="item.type === 'picker'" >
+          <label class="answer picker" v-for="answer in item.answers" :key="answer.val"><input type="radio" name="item.id" v-model="userAnswer" :value="answer.val"><div>{{answer.value}}</div></label>
+        </div>
+        <div class="answers" v-if="item.type === 'short'" >
+          <input class="answer input" type="text" v-model="userAnswerText" placeholder="Впишите ответ">
+        </div>
+        <div class="answers" v-if="item.type === 'long'">
+          <textarea class="answer textarea" placeholder="Впишите ответ"  v-model="userAnswerText"></textarea>
+        </div>
+        <div class="answers" v-if="item.type === 'checkboxes'" >
+          <label class="answer checkboxes" v-for="answer in item.answers" :key="answer.val"><input type="checkbox" :name="`answer.val`" v-model="userAnswer" :value="answer.val"><div>{{answer.value}}</div></label>
+        </div>
+      </div>
+      {{userAnswerText===''}} {{userAnswer.length < 1}} {{userAnswerText==='' && userAnswer.length < 1}}
+      <div class="controls">
+        <!-- <div class="button close">Завершить</div> -->
+        <!-- <div class="button button" @click="send" v-if="currentQuestion < questions.length && currentQuestion !== 1">Завершить</div> -->
+        <!-- <div v-else></div> -->
+        <div>Вопрос {{currentQuestion}} из {{questions.length}}</div>
+        <div v-if="currentQuestion < questions.length">
+
+          <div class="button white" @click="lose" >Пропустить</div>
+          <div class="button button" :class="{
+            disabled: (userAnswerText === '' && userAnswer.length < 1)
+          }" @click="next" >Далее</div>
+        </div>
+
+        <div v-if="currentQuestion >= questions.length">
+          <div class="button white" @click="sendLose" >Пропустить</div>
+          <div class="button button"  :class="{
+            disabled: (userAnswerText === '' && userAnswer.length < 1)
+          }" @click="sendAll">Отправить</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="authpage" v-if='status==="sended"'>
+
+  <div class="auth">
+    <div class="title">Готово</div>
+    <div class="line"></div>
+    <div class="welcome-text">
+      <div class="col-12">
+        <p class="disclaimer">
+          Спасибо. Ваши ответы отправлены в департамент HR. Ближайшее время мы с Вами свяжемся
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  
+</div>

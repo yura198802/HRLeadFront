@@ -1,0 +1,16 @@
+<div style="padding: 10px;">
+  <DxPopup width="80%" height="80%" :show-title="true" :title.sync="captionForm" :drag-enabled="true"
+    :close-on-outside-click="false" :visible.sync="isVisibleForm">
+    <div style="display:flex;height:100%;flex-direction: column;">
+      <div style="height: 90%;">
+        <DesignerDataGrid ref="dataGrid" />
+      </div>
+      <div style="height: 10%;display: flex; flex-direction: row;justify-content: flex-end;align-items: center">
+        <DxButton ... text="Выбрать"  type="normal" icon="save" styling-mode="outlined"
+          @click="onOk" />
+        <DxButton ... style="margin: 10px;" text="Отмена" hint="Отмена" type="normal" icon="remove" styling-mode="outlined"
+          @click="onClose" />
+      </div>
+    </div>
+  </DxPopup>
+</div>

@@ -1,0 +1,23 @@
+.authpage {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .logo-container {
+    background-color: #fff;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    width: 440px;
+    justify-content: space-around;
+    margin-bottom: 32px;
+    border: 2px solid #e6eaf0;
+    box-sizing: border-box;
+    span {
+      font-size: 12px;
+    }
+  }
+}
